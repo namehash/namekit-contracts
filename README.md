@@ -1,5 +1,6 @@
 # NameKit contracts
 - [NameKit contracts](#namekit-contracts)
+  - [How it works?](#how-it-works)
   - [Getting started](#getting-started)
     - [Required](#required)
     - [Deploying your contracts](#deploying-your-contracts)
@@ -9,6 +10,29 @@
   - [Contracts deployed](#contracts-deployed)
     - [Mainnet](#mainnet)
     - [Goerli](#goerli)
+
+## How it works?
+This project was created for apps promoting ENS domain registration and renewal. It enables those apps to define a premium on top of ENS names, creating a revenue stream to grow together with ENS. This incentivizes apps to attract users to have a web3 identity and improve the UX for registration and renewals.
+
+The contract's steps and design are optimized to spend as little gas as possible, so the user only pays a little more for the app to have this revenue opportunity.
+
+```mermaid
+sequenceDiagram
+	autoNumber
+	App ->> User: Request name price + fee
+  User ->> NameKit: Register name tx
+	NameKit ->> ENS: forward tx
+	ENS -->> User: Sends ENS name
+	ENS -->> NameKit: Sends refund
+```
+
+1. The app gets the price of the desired ENS name, adds a premium that will be accrued on the app's NameKit contract, and requests this value in the registration transaction to be approved by the user.
+2. The user approves the transaction, interacting with the NameKit Controller
+3. NameKit Controller forwards the transaction to ETHRegistrarController with all the user-provided parameters.
+4. ETHRegistrarController sends the ENS name NFT to the user
+5. NameKit accrues the premium, which can be withdrawn from the app treasury at any moment.
+
+
 
 ## Getting started
 
