@@ -12,25 +12,29 @@
     - [Goerli](#goerli)
 
 ## How it works?
-This project was created for apps promoting ENS domain registration and renewal. It enables those apps to define a premium on top of ENS names, creating a revenue stream to grow together with ENS. This incentivizes apps to attract users to have a web3 identity and improve the UX for registration and renewals.
+This project is one of many components of NameKit. The goal of this contract template is helping ENS grow by incentivizing more wallets and apps to promote ENS name registration and renewal to their users. The contract enables those wallets & apps to define a custom price premium on top of the base rate for .eth names. This enables the creation of recurring revenue streams for builders who help ENS grow. We hope this creates more incentives for wallets & apps to onboard their users into ENS.
 
-The contract's steps and design are optimized to spend as little gas as possible, so the user only pays a little more for the app to have this revenue opportunity.
+Each wallet and app should deploy their own instance of this contract that defines their specialized treasury address.
+
+This contract only works for the registration and renewal of direct subnames of ".eth".
+
+The contract is designed and optimized to spend as little gas overhead as possible. Users pay a little more for the app to have this revenue opportunity.
 
 ```mermaid
 sequenceDiagram
 	autoNumber
-	App ->> User: Request name price + fee
-  User ->> NameKit: Register name tx
-	NameKit ->> ENS: forward tx
-	ENS -->> User: Sends ENS name
-	ENS -->> NameKit: Sends refund
+	App ->> User: Request base price + custom fee
+  User ->> NameKit: Register tx
+	NameKit ->> ENS: Forward register tx
+	ENS -->> User: Send ENS name
+	ENS -->> NameKit: Send refund (custom fee)
 ```
 
-1. The app gets the price of the desired ENS name, adds a premium that will be accrued on the app's NameKit contract, and requests this value in the registration transaction to be approved by the user.
-2. The user approves the transaction, interacting with the NameKit Controller
-3. NameKit Controller forwards the transaction to ETHRegistrarController with all the user-provided parameters.
-4. ETHRegistrarController sends the ENS name NFT to the user
-5. NameKit accrues the premium, which can be withdrawn from the app treasury at any moment.
+1. The app gets the base price of the desired ".eth" name and adds their customized price premium. The app then requests this total value in the registration transaction to be approved by the user.
+2. The user approves the transaction, interacting with app's custom deployment of the NameKit Controller contract.
+3. The app's custom deployment of the NameKit Controller forwards the transaction to ETHRegistrarController with all the user-provided parameters.
+4. ETHRegistrarController sends the ENS name NFT to the user.
+5. The app's custom deployment of the NameKit Controller accrues their customized price premium, which can be withdrawn to their custom treasury address whenever desired.
 
 
 
