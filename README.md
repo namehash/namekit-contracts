@@ -108,3 +108,9 @@ yarn withdraw
 - [Chainlink ETH/USD data feed](https://goerli.etherscan.io/address/0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e#code): `0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e`
 
 _ABIs are avaiable on Etherscan_
+
+## License
+
+Licensed under the MIT License, Copyright © 2023-present [NameHash Labs](https://namehashlabs.org).
+
+See [LICENSE](./LICENSE) for more information.
