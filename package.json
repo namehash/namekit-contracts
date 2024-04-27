@@ -9,7 +9,7 @@
   },
   "scripts": {
     "compile": "npx hardhat compile",
-    "deploy:test": "npx hardhat run script/deploy/deploy.ts --network goerli",
+    "deploy:test": "npx hardhat run script/deploy/deploy.ts --network sepolia",
     "deploy:mainnet": "npx hardhat run script/deploy/deploy.ts --network mainnet",
     "withdraw": "ts-node script/interact/withdraw.ts",
     "register-name": "ts-node script/interact/register-name.ts",

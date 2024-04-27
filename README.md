@@ -9,7 +9,8 @@
     - [For withdrawing collected fees](#for-withdrawing-collected-fees)
   - [Contracts deployed](#contracts-deployed)
     - [Mainnet](#mainnet)
-    - [Goerli](#goerli)
+    - [Sepolia](#sepolia)
+  - [License](#license)
 
 ## How it works?
 This project is one of many components of NameKit. The goal of this contract template is helping ENS grow by incentivizing more wallets and apps to promote ENS name registration and renewal to their users. The contract enables those wallets & apps to define a custom price premium on top of the base rate for .eth names. This enables the creation of recurring revenue streams for builders who help ENS grow. We hope this creates more incentives for wallets & apps to onboard their users into ENS.
@@ -59,7 +60,7 @@ sequenceDiagram
         -  If you want a Safe Multisig, then create your treasury [here](https://smold.app/safe).
     2. The deployer private key must be a fresh account, with zero transactions. Make sure to send some ETH to this account in order to pay for fees on contract deployment.
 4. Deploying contracts
-   - Goerli
+   - sepolia
    ```
    yarn deploy:test
    ```
@@ -74,7 +75,7 @@ sequenceDiagram
 ## Commands
 Before running these commands, make sure to:
 - Generate the typechain interfaces: `yarn compile`
-- Change CHAIN_ID in `.env` to the desired network you want to interact with. 1 = Mainnet, 5 = Goerli.
+- Change CHAIN_ID in `.env` to the desired network you want to interact with. 1 = Mainnet, 11155111 = sepolia.
 
 ### For registering a name through
 - Make sure to fill the environment variables
@@ -99,13 +100,13 @@ yarn withdraw
 - [ENS Registry with fallback](https://etherscan.io/address/0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e#code): `0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e`
 - [Chainlink ETH/USD data feed](https://etherscan.io/address/0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419#code) `0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419`
 
-### Goerli
-- [Example NamekitController](https://goerli.etherscan.io/address/0x232332263e6e4bd8a134b238975e2200c8b7dac1#code): `0x232332263e6e4bd8a134b238975e2200c8b7dac1`
-- [Example NameKit Treasury](https://goerli.etherscan.io/address/0xC362EB2dDCde1866b263fF59778c0a6eF69eF4F3#code): `0xC362EB2dDCde1866b263fF59778c0a6eF69eF4F3`
-- [ENS ETHRegistrarController](https://goerli.etherscan.io/address/0xCc5e7dB10E65EED1BBD105359e7268aa660f6734#code): `0xCc5e7dB10E65EED1BBD105359e7268aa660f6734`
-- [ENS Public resolver](https://goerli.etherscan.io/address/0xd7a4F6473f32aC2Af804B3686AE8F1932bC35750#code): `0xd7a4F6473f32aC2Af804B3686AE8F1932bC35750`
-- [ENS Registry with fallback](https://goerli.etherscan.io/address/0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e#code): `0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e`
-- [Chainlink ETH/USD data feed](https://goerli.etherscan.io/address/0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e#code): `0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e`
+### Sepolia
+- [Example NamekitController](https://sepolia.etherscan.io/address/0x1cf7735B2e2641274f6d038701c561010D2fCf46#code): `0x1cf7735B2e2641274f6d038701c561010D2fCf46`
+- [Example NameKit Treasury](https://sepolia.etherscan.io/address/0xb3C70b0FEeFfE0F3a540514C8080147c296982d3#code): `0xb3C70b0FEeFfE0F3a540514C8080147c296982d3`
+- [ENS ETHRegistrarController](https://sepolia.etherscan.io/address/0xFED6a969AaA60E4961FCD3EBF1A2e8913ac65B72#code): `0xFED6a969AaA60E4961FCD3EBF1A2e8913ac65B72`
+- [ENS Public resolver](https://sepolia.etherscan.io/address/0x8FADE66B79cC9f707aB26799354482EB93a5B7dD#code): `0x8FADE66B79cC9f707aB26799354482EB93a5B7dD`
+- [ENS Registry with fallback](https://sepolia.etherscan.io/address/0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e#code): `0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e`
+- [Chainlink ETH/USD data feed](https://sepolia.etherscan.io/address/0x694AA1769357215DE4FAC081bf1f309aDC325306#code): `0x694AA1769357215DE4FAC081bf1f309aDC325306`
 
 _ABIs are avaiable on Etherscan_
 
