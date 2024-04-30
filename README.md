@@ -62,7 +62,7 @@ sequenceDiagram
 4. Deploying contracts
    - Sepolia
    ```
-   yarn deploy:test
+   yarn deploy:sepolia
    ```
    - Mainnet
    ```
