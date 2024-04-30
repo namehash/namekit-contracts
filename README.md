@@ -60,7 +60,7 @@ sequenceDiagram
         -  If you want a Safe Multisig, then create your treasury [here](https://smold.app/safe).
     2. The deployer private key must be a fresh account, with zero transactions. Make sure to send some ETH to this account in order to pay for fees on contract deployment.
 4. Deploying contracts
-   - sepolia
+   - Sepolia
    ```
    yarn deploy:test
    ```
