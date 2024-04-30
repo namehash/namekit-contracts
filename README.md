@@ -75,7 +75,7 @@ sequenceDiagram
 ## Commands
 Before running these commands, make sure to:
 - Generate the typechain interfaces: `yarn compile`
-- Change CHAIN_ID in `.env` to the desired network you want to interact with. 1 = Mainnet, 11155111 = sepolia.
+- Change CHAIN_ID in `.env` to the desired network you want to interact with. 1 = Mainnet, 11155111 = Sepolia.
 
 ### For registering a name through
 - Make sure to fill the environment variables
