@@ -10,7 +10,7 @@ interface ContractAddresses {
 
 enum Networks {
   Mainnet = 1,
-  Goerli = 5,
+  Sepolia = 11155111,
 }
 
 export const addresses: ContractAddresses = {
@@ -21,11 +21,11 @@ export const addresses: ContractAddresses = {
     publicResolver: "0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41",
     treasury: "0xC362EB2dDCde1866b263fF59778c0a6eF69eF4F3",
   },
-  [Networks.Goerli]: {
+  [Networks.Sepolia]: {
     namekitEthRegistrar: "0x232332263e6e4bd8a134b238975e2200c8b7dac1",
-    chainlinkPriceFeed: "0xD4a33860578De61DBAbDc8BFdb98FD742fA7028e",
-    ethRegistrarController: "0xCc5e7dB10E65EED1BBD105359e7268aa660f6734",
-    publicResolver: "0xd7a4F6473f32aC2Af804B3686AE8F1932bC35750",
-    treasury: "0xC362EB2dDCde1866b263fF59778c0a6eF69eF4F3",
+    chainlinkPriceFeed: "0x694AA1769357215DE4FAC081bf1f309aDC325306",
+    ethRegistrarController: "0xFED6a969AaA60E4961FCD3EBF1A2e8913ac65B72",
+    publicResolver: "0x8FADE66B79cC9f707aB26799354482EB93a5B7dD",
+    treasury: "0xb3C70b0FEeFfE0F3a540514C8080147c296982d3",
   },
 };
